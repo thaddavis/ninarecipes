@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
 
   def setup
     @user = users(:michael)
@@ -17,14 +18,10 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   test "login with valid information" do
-    get user_session_path
-    post user_session_path, params: { session: { email:    @user.email,
-                                          password: '123greetings' } }
-    assert_redirected_to @user
+    get new_user_session_path
+    post user_session_path, params: { user: { email: 't@t.com',
+                                          password: 'asdfasdf' } }
     follow_redirect!
-    assert_template 'users/show'
-    assert_select "a[href=?]", user_session_path, count: 0
     assert_select "a[href=?]", destroy_user_session_path
-    assert_select "a[href=?]", edit_user_registration_path(@user)
   end
 end

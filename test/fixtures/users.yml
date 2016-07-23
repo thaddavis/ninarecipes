@@ -12,5 +12,21 @@ michael:
   username: MichaelExample
   first_name: Mike
   last_name: berrics
-  email: michael@example.com
-  encrypted_password: <%= User.new.send(:password_digest, '123greetings') %>
+  email: t@t.com
+  encrypted_password: <%= User.new.send(:password_digest, 'asdfasdf') %>
+  reset_password_token: nil
+  reset_password_token: nil
+  remember_created_at: nil
+  sign_in_count: 1
+  current_sign_in_at: 2011-01-02 08:31:23
+  last_sign_in_at: 2011-01-02 08:31:23
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  confirmation_token: nil
+  confirmed_at: 2011-01-02 08:31:23
+  confirmation_sent_at: 2011-01-02 08:30:59
+  failed_attempts: 0
+  unlock_token: nil
+  locked_at: nil
+  created_at: 2011-01-02 08:30:59
+  updated_at: 2011-01-02 08:31:23
